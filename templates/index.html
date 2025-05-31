@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Predictor</title>
+</head>
+<body>
+    <h1>Algerian Forest Fire Index Prediction</h1>
+    
+    <!-- Form to enter input values for prediction -->
+    <form action="/predict" method="POST">
+        <label for="temperature">Temperature (°C):</label>
+        <input type="text" name="temperature" id="temperature" required>
+        <br><br>
+        
+        <label for="humidity">Humidity (%):</label>
+        <input type="text" name="humidity" id="humidity" required>
+        <br><br>
+        
+        <label for="wind_speed">Wind Speed (km/h):</label>
+        <input type="text" name="wind_speed" id="wind_speed" required>
+        <br><br>
+
+        <label for="rain">Rain (mm):</label>
+        <input type="text" name="rain" id="rain" required>
+        <br><br>
+
+        <label for="ffmc">FFMC (Fine Fuel Moisture Code):</label>
+        <input type="text" name="ffmc" id="ffmc" required>
+        <br><br>
+
+        <label for="dmc">DMC (Drought Code):</label>
+        <input type="text" name="dmc" id="dmc" required>
+        <br><br>
+
+        <label for="dc">DC (Drought Code):</label>
+        <input type="text" name="dc" id="dc" required>
+        <br><br>
+
+        <label for="isi">ISI (Initial Spread Index):</label>
+        <input type="text" name="isi" id="isi" required>
+        <br><br>
+
+        <label for="bui">BUI (Buildup Index):</label>
+        <input type="text" name="bui" id="bui" required>
+        <br><br>
+
+        <input type="submit" value="Predict FWI">
+    </form>
+    
+    {% if result %}
+        <h3>Prediction Result: {{ result }}</h3>
+    {% endif %}
+</body>
+</html>
